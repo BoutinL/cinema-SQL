@@ -69,13 +69,20 @@ WHERE a.personne_id = r.personne_id
 ```
 
 ### I
+Je n'ai pas pu implémenter le 'year' à l'intérieur du DATEDIFF
 ```
-
+SELECT titre, YEAR(dateSortie) AS annee
+FROM film f 
+WHERE DATEDIFF(CURRENT_DATE, dateSortie) < 365*5 ;
 ```
 
 ### J
 ```
-
+SELECT sexe, COUNT(sexe) as nbrTotal
+FROM personne p 
+INNER JOIN acteur a ON p.id_personne = a.personne_id
+WHERE p.id_personne = a.personne_id
+GROUP BY p.sexe
 ```
 
 ### K
