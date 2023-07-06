@@ -61,7 +61,11 @@ ORDER BY annee DESC
 
 ### H
 ```
-
+SELECT nom, prenom
+FROM personne p
+INNER JOIN acteur a ON p.id_personne = a.personne_id
+INNER JOIN realisateur r ON p.id_personne = r.personne_id
+WHERE a.personne_id = r.personne_id
 ```
 
 ### I
