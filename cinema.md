@@ -87,7 +87,9 @@ GROUP BY p.sexe
 
 ### K
 ```
-
+SELECT nom, prenom, year(dateNaissance)
+FROM personne p 
+WHERE DATEDIFF(CURRENT_DATE, dateNaissance) <= 365*50 ;g
 ```
 
 ### L
