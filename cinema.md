@@ -51,7 +51,12 @@ WHERE film_id = 1
 
 ### G
 ```
-
+SELECT nom, YEAR(dateSortie) AS annee
+FROM role r 
+INNER JOIN jouer j ON r.id_role = j.role_id
+INNER JOIN film f ON j.film_id = f.id_film
+WHERE acteur_id = 13
+ORDER BY annee DESC
 ```
 
 ### H
