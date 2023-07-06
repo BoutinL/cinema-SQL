@@ -94,5 +94,10 @@ WHERE DATEDIFF(CURRENT_DATE, dateNaissance) <= 365*50 ;g
 
 ### L
 ```
-
+SELECT nom, prenom, COUNT(j.acteur_id) AS nbrFilm
+FROM personne p 
+INNER JOIN acteur a ON p.id_personne = a.personne_id
+INNER JOIN jouer j ON a.id_acteur = j.acteur_id
+GROUP BY p.id_personne
+HAVING nbrFilm >= 3
 ```
